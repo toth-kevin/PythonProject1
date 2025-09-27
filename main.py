@@ -1,14 +1,31 @@
-# Ez az első módosítás.
+# Tízszög rajzolás - Tóth kevin Dorián MAXEBH
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import turtle
+while True:
+    meret_input = input("Add meg az oldal hosszát (csak pozitív egész szám): ")
+    if meret_input.isdigit() and int(meret_input) > 0:
+        meret = int(meret_input)
+        break
+    else:
+        print("Hibás adat, kérlek próbáld újra!")
+
+ablak = turtle.Screen()
+ablak.title("Szabályos tízszög")
+
+t = turtle.Turtle()
+t.color("blue")
+t.pensize(3)
+t.speed(5)
+t.penup()
+t.goto(-meret/2, -meret/2)  # kb. középre igazít
+t.pendown()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to to breakpoint.
-# Press the green button in the gutter to run the scrpt.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Szabályos tízszög
+for _ in range(10):
+    t.forward(meret)
+    t.left(36)   # 360 / 10 = 36 fok
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/    #TKD+MAXEBH
+ablak.exitonclick()
+
+#TKD+MAXEBH
